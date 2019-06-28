@@ -18,7 +18,7 @@ The purpose of this node.js module is to make the communication with the Webunti
     * [Logout](https://github.com/toporek3112/node-webuntis#Logout)
 
 
-### Istllation
+### Instllation
 ````
 npm install node-webuntis 
 ````
