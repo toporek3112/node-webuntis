@@ -1,5 +1,6 @@
 # WebUntis
-The purpose of this node.js module is to make the communication with the Webuntis API easier
+The purpose of this node.js module is to make the communication with the Webuntis API easier. 
+**Please note that some of the requests require special rights that you may not have.**
 
 ## Contents
 * [installation](https://github.com/toporek3112/node-webuntis#Istllation)
