@@ -71,7 +71,7 @@ a Object containing the sessionId, personType, personId and klassId of the user 
 #### Usage
 ````js
 let timetable = await getTimetable(sessionId, personType, personId)
-let timetable = await getTimetable(sessionId, personType, personId, startDate, endDate)
+let timetable = await getTimetable(sessionId, personType, personId, startDate, endDate) //yyyymmdd
 ````
 #### Returns
 a array of lessons which should looks like this:
