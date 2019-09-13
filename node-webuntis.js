@@ -156,14 +156,14 @@ exports.getStudents = async (sessionId) => {
 }
 
 //get all (base) classes 
-exports.getClasses = async (sessionId, schollYearId) => {
+exports.getClasses = async (sessionId, schoolYearId) => {
     let res = await fetch(`https://melpomene.webuntis.com/WebUntis/jsonrpc.do;jsessionid=${sessionId}?school=htl-ottakring`, { //post request to the WebUntis API
     method: 'post',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
         "id":"ID",
         "method":"getKlassen", 
-        "params": {"schoolyearId": schollYearId},
+        "params": {"schoolyearId": schoolYearId},
         "jsonrpc":"2.0",
         })
     })
@@ -309,7 +309,7 @@ exports.getStatusData = async (sessionId) => {
     }
 }
 
-//get currentSchollYear 
+//get currentSchoolYear 
 exports.getCurrentSchoolYear = async (sessionId) => {
     let res = await fetch(`https://melpomene.webuntis.com/WebUntis/jsonrpc.do;jsessionid=${sessionId}?school=htl-ottakring`, { //post request to the WebUntis API
     method: 'post',
@@ -370,6 +370,59 @@ exports.getLatestImportTime = async (sessionId) => {
 
     if(json.error == undefined){ 
         return dateFormat(new Date(json.result), 'HH:MM yyyymmdd')
+    }else{
+        throw new Error(colors.red(json.error.message)) 
+    }
+}
+
+//get substitutions
+exports.getSubstitutions = async (sessionId, startDate, endDate, departmentId) => {
+    let res = await fetch(`https://melpomene.webuntis.com/WebUntis/jsonrpc.do;jsessionid=${sessionId}?school=htl-ottakring`, { //post request to the WebUntis API
+    method: 'post',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+        "id":"ID",
+        "method":"getSubstitutions", 
+        "params": {
+            "startDate": startDate,
+            "endDate": endDate,
+            "departmentId": departmentId == undefined ? 0 : departmentId
+        },
+        "jsonrpc":"2.0",
+        })
+    })
+    
+    let json = await res.json();
+
+    if(json.error == undefined){ 
+        return json.result
+    }else{
+        throw new Error(colors.red(json.error.message)) 
+    }
+}
+
+//get timetableWithAbsences 
+exports.getTimetableWithAbsences= async (sessionId, startDate, endDate) => {
+    let res = await fetch(`https://melpomene.webuntis.com/WebUntis/jsonrpc.do;jsessionid=${sessionId}?school=htl-ottakring`, { //post request to the WebUntis API
+    method: 'post',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+        "id":"ID",
+        "method":"getTimetableWithAbsences", 
+        "params": {
+            "options": {
+                "startDate": startDate,
+                "endDate": endDate
+            }
+        },
+        "jsonrpc":"2.0",
+        })
+    })
+    
+    let json = await res.json();
+
+    if(json.error == undefined){ 
+        return json.result
     }else{
         throw new Error(colors.red(json.error.message)) 
     }
