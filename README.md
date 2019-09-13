@@ -8,6 +8,7 @@ The purpose of this node.js module is to make the communication with the Webunti
 * [Methods](https://github.com/toporek3112/node-webuntis#Methods)
     * [getSession](https://github.com/toporek3112/node-webuntis#getSession)
     * [getTimetable](https://github.com/toporek3112/node-webuntis#getTimetable)
+    * [getCurrentWeek](https://github.com/toporek3112/node-webuntis#getCurrentWeek)
     * [getTeachers](https://github.com/toporek3112/node-webuntis#getTeachers)
     * [getStudents](https://github.com/toporek3112/node-webuntis#getStudents)
     * [getSubjects](https://github.com/toporek3112/node-webuntis#getSubjects)
@@ -93,6 +94,37 @@ a array of lessons which should looks like this:
     .
     ]
 ````
+
+## getCurrentWeek
+#### Parameters
+* sessionId
+* personType
+* personId
+#### Usage
+````js
+let currentWeekTimetable = await getCurrentWeek(sessionId, personType, personId)
+````
+#### Returns
+a array of lessons which should looks like this:
+````
+[ { id: 89,
+    date: 20160509,
+    startTime: 1210,
+    endTime: 1300,
+    kl:
+     [ { id: 23,
+         name: '4A',
+         longname: 'Abt. Informationstechnologie' } ],
+    te: [ { id: 18, name: 'Bob' } ],
+    su: [ { id: 27, name: 'D', longname: 'DEUTSCH' } ],
+    ro: [ { id: 9, name: '367', longname: 'Klasse' } ],
+    activityType: 'Unterricht' },
+    .
+    .
+    .
+    ]
+````
+
 
 ## getTeachers
 #### Parameters
