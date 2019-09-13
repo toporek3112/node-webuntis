@@ -18,6 +18,7 @@ The purpose of this node.js module is to make the communication with the Webunti
     * [getHolidays](https://github.com/toporek3112/node-webuntis#getHolidays)
     * [getTimeGrid](https://github.com/toporek3112/node-webuntis#getTimeGrid)
     * [getCurrentSchoolYear](https://github.com/toporek3112/node-webuntis#getCurrentSchoolYear)
+    * [getSchoolYears](https://github.com/toporek3112/node-webuntis#getSchoolYears)
     * [Logout](https://github.com/toporek3112/node-webuntis#Logout)
 
 
