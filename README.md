@@ -318,6 +318,26 @@ a json object which should looks like this:
   endDate: 20190630 }
 ````
 
+## getSchoolYears
+#### Parameters
+* sessionId
+#### Usage
+````js
+let schoolyear = await webuntis.getSchoolYears(sessionId)
+````
+#### Returns
+a array of schoolyears which should looks like this:
+````
+[{ id: 1,
+  name: '2018/2019',
+  startDate: 20180903,
+  endDate: 20190630 },
+  .
+  .
+  .
+  ]
+````
+
 ## Logout
 #### Parameters
 * sessionId
