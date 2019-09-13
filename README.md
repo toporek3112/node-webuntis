@@ -3,23 +3,28 @@ The purpose of this node.js module is to make the communication with the Webunti
 **Please note that some of the requests require special rights that you may not have.**
 
 ## Contents
-* [installation](https://github.com/toporek3112/node-webuntis#Istllation)
+* [installation](https://github.com/toporek3112/node-webuntis#Installation)
 * [Overall](https://github.com/toporek3112/node-webuntis#Overall)
 * [Methods](https://github.com/toporek3112/node-webuntis#Methods)
     * [getSession](https://github.com/toporek3112/node-webuntis#getSession)
     * [getTimetable](https://github.com/toporek3112/node-webuntis#getTimetable)
+    * [getCurrentWeek](https://github.com/toporek3112/node-webuntis#getCurrentWeek)
     * [getTeachers](https://github.com/toporek3112/node-webuntis#getTeachers)
     * [getStudents](https://github.com/toporek3112/node-webuntis#getStudents)
+    * [getClasses](https://github.com/toporek3112/node-webuntis#getClasses)
     * [getSubjects](https://github.com/toporek3112/node-webuntis#getSubjects)
     * [getRooms](https://github.com/toporek3112/node-webuntis#getRooms)
     * [getDepartments](https://github.com/toporek3112/node-webuntis#getDepartments)
     * [getHolidays](https://github.com/toporek3112/node-webuntis#getHolidays)
     * [getTimeGrid](https://github.com/toporek3112/node-webuntis#getTimeGrid)
     * [getCurrentSchoolYear](https://github.com/toporek3112/node-webuntis#getCurrentSchoolYear)
+    * [getSchoolYears](https://github.com/toporek3112/node-webuntis#getSchoolYears)
+    * [getSubstitutions](https://github.com/toporek3112/node-webuntis#getSubstitutions)
+    * [getTimetableWithAbsences](https://github.com/toporek3112/node-webuntis#getTimetableWithAbsences)
     * [Logout](https://github.com/toporek3112/node-webuntis#Logout)
 
 
-### Instllation
+### Installation
 ````
 npm install node-webuntis 
 ````
@@ -94,6 +99,37 @@ a array of lessons which should looks like this:
     ]
 ````
 
+## getCurrentWeek
+#### Parameters
+* sessionId
+* personType
+* personId
+#### Usage
+````js
+let currentWeekTimetable = await getCurrentWeek(sessionId, personType, personId)
+````
+#### Returns
+a array of lessons which should looks like this:
+````
+[ { id: 89,
+    date: 20160509,
+    startTime: 1210,
+    endTime: 1300,
+    kl:
+     [ { id: 23,
+         name: '4A',
+         longname: 'Abt. Informationstechnologie' } ],
+    te: [ { id: 18, name: 'Bob' } ],
+    su: [ { id: 27, name: 'D', longname: 'DEUTSCH' } ],
+    ro: [ { id: 9, name: '367', longname: 'Klasse' } ],
+    activityType: 'Unterricht' },
+    .
+    .
+    .
+    ]
+````
+
+
 ## getTeachers
 #### Parameters
 * sessionId
@@ -138,6 +174,30 @@ a array of students which should looks like this:
     .
     ]
 ````
+
+## getClasses
+#### Parameters
+* sessionId
+* schoolyearId
+#### Usage
+````js
+let classes = await Untis.getClasses(session.sessionId, schoolyearId)
+````
+#### Returns
+a array of students which should looks like this:
+````
+[{ id: 85,
+    name: '3ABM',
+    longName: 'BM-Aufbaulehrgang (7S)',
+    active: true,
+    did: 1,
+    teacher1: 3 },
+    .
+    .
+    .
+    ]
+````
+
 
 ## getSubjects
 #### Parameters
@@ -259,6 +319,81 @@ a json object which should looks like this:
   name: '2018/2019',
   startDate: 20180903,
   endDate: 20190630 }
+````
+
+## getSchoolYears
+#### Parameters
+* sessionId
+#### Usage
+````js
+let schoolyear = await webuntis.getSchoolYears(sessionId)
+````
+#### Returns
+a array of schoolyears which should looks like this:
+````
+[{ id: 1,
+  name: '2018/2019',
+  startDate: 20180903,
+  endDate: 20190630 },
+  .
+  .
+  .
+  ]
+````
+
+## getSubstitutions
+#### Parameters
+* sessionId
+* startDate
+* endDate
+* departmentId (0 for all departments)
+#### Usage
+````js
+let schoolyear = await webuntis.getSubstitutions(sessionId, startDate, endDate, departmentId)
+````
+#### Returns
+a array of substitutions which should looks like this:
+````
+[{ type: 'subst',
+    lsid: 598,
+    date: 20190911,
+    startTime: 1120,
+    endTime: 1210,
+    kl: [ [Object], [Object] ],
+    te: [ [Object], [Object], [Object] ],
+    su: [ [Object] ],
+    ro: [ [Object], [Object], [Object], [Object] ] },
+  .
+  .
+  .
+  ]
+````
+
+## getTimetableWithAbsences
+#### Parameters
+* sessionId
+* startDate
+* endDate
+#### Usage
+````js
+let schoolyear = await webuntis.getTimetableWithAbsences(sessionId, startDate, endDate)
+````
+#### Returns
+a array of absences which should looks like this:
+````
+[{ date: 20190905,
+  startTime: 750,
+  endTime: 840,
+  studentId: '91644720140681',
+  subjectId: '',
+  teacherIds: [ '' ],
+  studentGroup: 'AM_5BHITM',
+  user: '',
+  checked: true }
+  .
+  .
+  .
+  ]
 ````
 
 ## Logout
