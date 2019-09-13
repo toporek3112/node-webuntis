@@ -349,7 +349,7 @@ a array of schoolyears which should looks like this:
 * departmentId (0 for all departments)
 #### Usage
 ````js
-let schoolyear = await webuntis.getSubstitutions(sessionId, startDate, endDatem, departmentId)
+let schoolyear = await webuntis.getSubstitutions(sessionId, startDate, endDate, departmentId)
 ````
 #### Returns
 a array of substitutions which should looks like this:
@@ -376,7 +376,7 @@ a array of substitutions which should looks like this:
 * endDate
 #### Usage
 ````js
-let schoolyear = await webuntis.getTimetableWithAbsences(sessionId, startDate, endDatem)
+let schoolyear = await webuntis.getTimetableWithAbsences(sessionId, startDate, endDate)
 ````
 #### Returns
 a array of absences which should looks like this:
