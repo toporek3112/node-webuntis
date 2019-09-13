@@ -20,7 +20,7 @@ The purpose of this node.js module is to make the communication with the Webunti
     * [getCurrentSchoolYear](https://github.com/toporek3112/node-webuntis#getCurrentSchoolYear)
     * [getSchoolYears](https://github.com/toporek3112/node-webuntis#getSchoolYears)
     * [getSubstitutions](https://github.com/toporek3112/node-webuntis#getSubstitutions)
-    * [getTimetablesWithAbsences](https://github.com/toporek3112/node-webuntis#getTimetablesWithAbsences)
+    * [getTimetableWithAbsences](https://github.com/toporek3112/node-webuntis#getTimetableWithAbsences)
     * [Logout](https://github.com/toporek3112/node-webuntis#Logout)
 
 
