@@ -19,6 +19,7 @@ The purpose of this node.js module is to make the communication with the Webunti
     * [getTimeGrid](https://github.com/toporek3112/node-webuntis#getTimeGrid)
     * [getCurrentSchoolYear](https://github.com/toporek3112/node-webuntis#getCurrentSchoolYear)
     * [getSchoolYears](https://github.com/toporek3112/node-webuntis#getSchoolYears)
+    * [getSubstitutions](https://github.com/toporek3112/node-webuntis#getSubstitutions)
     * [Logout](https://github.com/toporek3112/node-webuntis#Logout)
 
 
@@ -333,6 +334,34 @@ a array of schoolyears which should looks like this:
   name: '2018/2019',
   startDate: 20180903,
   endDate: 20190630 },
+  .
+  .
+  .
+  ]
+````
+
+## getSubstitutions
+#### Parameters
+* sessionId
+* startDate
+* endDate
+* departmentId (0 for all departments)
+#### Usage
+````js
+let schoolyear = await webuntis.getSchoolYears(sessionId, startDate, endDatem, departmentId)
+````
+#### Returns
+a array of substitutions which should looks like this:
+````
+[{ type: 'subst',
+    lsid: 598,
+    date: 20190911,
+    startTime: 1120,
+    endTime: 1210,
+    kl: [ [Object], [Object] ],
+    te: [ [Object], [Object], [Object] ],
+    su: [ [Object] ],
+    ro: [ [Object], [Object], [Object], [Object] ] },
   .
   .
   .
