@@ -11,6 +11,7 @@ The purpose of this node.js module is to make the communication with the Webunti
     * [getCurrentWeek](https://github.com/toporek3112/node-webuntis#getCurrentWeek)
     * [getTeachers](https://github.com/toporek3112/node-webuntis#getTeachers)
     * [getStudents](https://github.com/toporek3112/node-webuntis#getStudents)
+    * [getClasses](https://github.com/toporek3112/node-webuntis#getClasses)
     * [getSubjects](https://github.com/toporek3112/node-webuntis#getSubjects)
     * [getRooms](https://github.com/toporek3112/node-webuntis#getRooms)
     * [getDepartments](https://github.com/toporek3112/node-webuntis#getDepartments)
@@ -170,6 +171,30 @@ a array of students which should looks like this:
     .
     ]
 ````
+
+## getClasses
+#### Parameters
+* sessionId
+* schoolyearId
+#### Usage
+````js
+let classes = await Untis.getClasses(session.sessionId, schoolyearId)
+````
+#### Returns
+a array of students which should looks like this:
+````
+[{ id: 85,
+    name: '3ABM',
+    longName: 'BM-Aufbaulehrgang (7S)',
+    active: true,
+    did: 1,
+    teacher1: 3 },
+    .
+    .
+    .
+    ]
+````
+
 
 ## getSubjects
 #### Parameters
