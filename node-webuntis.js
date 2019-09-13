@@ -411,8 +411,8 @@ exports.getTimetableWithAbsences= async (sessionId, startDate, endDate) => {
         "method":"getTimetableWithAbsences", 
         "params": {
             "options": {
-                "startDate": startDate,
-                "endDate": endDate
+                "startDate": startDate, // Format: yyyymmdd
+                "endDate": endDate // Format: yyyymmdd
             }
         },
         "jsonrpc":"2.0",
