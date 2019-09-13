@@ -20,6 +20,7 @@ The purpose of this node.js module is to make the communication with the Webunti
     * [getCurrentSchoolYear](https://github.com/toporek3112/node-webuntis#getCurrentSchoolYear)
     * [getSchoolYears](https://github.com/toporek3112/node-webuntis#getSchoolYears)
     * [getSubstitutions](https://github.com/toporek3112/node-webuntis#getSubstitutions)
+    * [getTimetablesWithAbsences](https://github.com/toporek3112/node-webuntis#getTimetablesWithAbsences)
     * [Logout](https://github.com/toporek3112/node-webuntis#Logout)
 
 
@@ -348,7 +349,7 @@ a array of schoolyears which should looks like this:
 * departmentId (0 for all departments)
 #### Usage
 ````js
-let schoolyear = await webuntis.getSchoolYears(sessionId, startDate, endDatem, departmentId)
+let schoolyear = await webuntis.getSubstitutions(sessionId, startDate, endDatem, departmentId)
 ````
 #### Returns
 a array of substitutions which should looks like this:
@@ -362,6 +363,33 @@ a array of substitutions which should looks like this:
     te: [ [Object], [Object], [Object] ],
     su: [ [Object] ],
     ro: [ [Object], [Object], [Object], [Object] ] },
+  .
+  .
+  .
+  ]
+````
+
+## getTimetableWithAbsences
+#### Parameters
+* sessionId
+* startDate
+* endDate
+#### Usage
+````js
+let schoolyear = await webuntis.getTimetableWithAbsences(sessionId, startDate, endDatem)
+````
+#### Returns
+a array of absences which should looks like this:
+````
+[{ date: 20190905,
+  startTime: 750,
+  endTime: 840,
+  studentId: '91644720140681',
+  subjectId: '',
+  teacherIds: [ '' ],
+  studentGroup: 'AM_5BHITM',
+  user: '',
+  checked: true }
   .
   .
   .
