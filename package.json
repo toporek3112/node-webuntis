@@ -1,6 +1,6 @@
 {
   "name": "node-webuntis",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "The purpose of this node.js module is to make the communication with the Webuntis API easier",
   "main": "node-webuntis.js",
   "directories": {
@@ -19,6 +19,6 @@
   "dependencies": {
     "colors": "^1.3.3",
     "dateformat": "^3.0.3",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.6.0"
   }
 }
