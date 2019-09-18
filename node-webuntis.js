@@ -369,7 +369,7 @@ exports.getLatestImportTime = async (sessionId) => {
     let json = await res.json();
 
     if(json.error == undefined){ 
-        return dateFormat(new Date(json.result), 'HH:MM yyyymmdd')
+        return json.result
     }else{
         throw new Error(colors.red(json.error.message)) 
     }
