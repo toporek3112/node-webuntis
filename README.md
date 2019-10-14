@@ -376,24 +376,25 @@ a array of substitutions which should looks like this:
 * endDate
 #### Usage
 ````js
-let schoolyear = await webuntis.getTimetableWithAbsences(sessionId, startDate, endDate)
+let schoolyear = await webuntis.getTimetableWithAbsences(sessionId, startDate, endDate) //yyyymmdd
 ````
 #### Returns
 a array of absences which should looks like this:
 ````
-[{ date: 20190905,
-  startTime: 750,
-  endTime: 840,
-  studentId: '91644720140681',
-  subjectId: '',
-  teacherIds: [ '' ],
-  studentGroup: 'AM_5BHITM',
-  user: '',
-  checked: true }
-  .
-  .
-  .
-  ]
+periodsWithAbsences:
+   [{ date: 20190905,
+      startTime: 750,
+      endTime: 840,
+      studentId: '91644720140681',
+      subjectId: '',
+      teacherIds: [ '' ],
+      studentGroup: 'AM_5BHITM',
+      user: '',
+      checked: true }
+      .
+      .
+      .
+      ]
 ````
 
 ## Logout
