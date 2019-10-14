@@ -3,8 +3,8 @@ The purpose of this node.js module is to make the communication with the Webunti
 **Please note that some of the requests require special rights that you may not have.**
 
 ## Contents
-* [installation](https://github.com/toporek3112/node-webuntis#Installation)
-* [Overall](https://github.com/toporek3112/node-webuntis#Overall)
+* [installation](#Installation)
+* [Overall](#Overall)
 * [Methods](https://github.com/toporek3112/node-webuntis#Methods)
     * [getSession](https://github.com/toporek3112/node-webuntis#getSession)
     * [getTimetable](https://github.com/toporek3112/node-webuntis#getTimetable)
@@ -21,7 +21,7 @@ The purpose of this node.js module is to make the communication with the Webunti
     * [getSchoolYears](https://github.com/toporek3112/node-webuntis#getSchoolYears)
     * [getSubstitutions](https://github.com/toporek3112/node-webuntis#getSubstitutions)
     * [getTimetableWithAbsences](https://github.com/toporek3112/node-webuntis#getTimetableWithAbsences)
-    * [Logout](https://github.com/toporek3112/node-webuntis#Logout)
+    * [Logout](#Logout)
 
 
 ### Installation
