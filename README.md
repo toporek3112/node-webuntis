@@ -8,7 +8,7 @@ The purpose of this node.js module is to make the communication with the Webunti
 * [Methods](#Methods)
     * [getSession](#getSession)
     * [getTimetable](#getTimetable)
-    * [getCurrentWeek](#getCurrentWeek)
+    * [getCurrentWeekTimetable](#getCurrentWeekTimetable)
     * [getTeachers](#getTeachers)
     * [getStudents](#getStudents)
     * [getClasses](#getClasses)
@@ -99,14 +99,14 @@ a array of lessons which should looks like this:
     ]
 ````
 
-## getCurrentWeek
+## getCurrentWeekTimetable
 #### Parameters
 * sessionId
 * personType
 * personId
 #### Usage
 ````js
-let currentWeekTimetable = await getCurrentWeek(sessionId, personType, personId)
+let currentWeekTimetable = await getCurrentWeekTimetable(sessionId, personType, personId)
 ````
 #### Returns
 a array of lessons which should looks like this:
