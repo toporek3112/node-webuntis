@@ -75,7 +75,7 @@ exports.getTimetable = async (sessionId, personType, personId, startDate, endDat
 }
 
 //get the timetable for the current week
-exports.getCurrentWeek = async (sessionId, personType, personId) => {
+exports.getCurrentWeekTimetable = async (sessionId, personType, personId) => {
     let monday = getMonday()
     let res = await fetch(`https://melpomene.webuntis.com/WebUntis/jsonrpc.do;jsessionid=${sessionId}?school=htl-ottakring`, { //post request to the WebUntis API
     method: 'post',
