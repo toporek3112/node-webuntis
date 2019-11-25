@@ -1,6 +1,6 @@
 {
   "name": "node-webuntis",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "The purpose of this node.js module is to make the communication with the Webuntis API easier",
   "main": "node-webuntis.js",
   "scripts": {
